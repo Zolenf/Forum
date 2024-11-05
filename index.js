@@ -34,10 +34,6 @@ async function displayPosts() {
   });
 
   // Sprawdza status admina i ustawia widoczność ikon kosza
-  if (localStorage.getItem("isAdmin") === "true") {
-    checkAdminStatus();
-    alert("You are an admin!");
-  }
 }
 
 // Funkcja do sprawdzenia statusu administratora
@@ -109,3 +105,8 @@ postsContainer.addEventListener("click", async (e) => {
 
 // Wywołujemy funkcję, aby załadować wiadomości przy starcie
 displayPosts();
+
+if (localStorage.getItem("isAdmin") === "true") {
+  checkAdminStatus();
+  alert("You are an admin!");
+}
