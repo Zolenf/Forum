@@ -9,6 +9,8 @@ const adminCode = "2115"; // Ustaw swój sekret
 const adminSubmitBtn = doc.getElementById("admin-submit");
 const adminCodeInput = doc.getElementById("admin-code");
 
+adminCodeInput.clear();
+
 // Funkcja do wyświetlania wiadomości
 async function displayPosts() {
   postsContainer.innerHTML = "";
