@@ -3,29 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>saving to data base</title>
+    <title>Forum</title>
   </head>
   <body>
-    <h1>hello, write something</h1>
+    <h1>Hello, write something</h1>
 
     <form id="form">
-      <input type="text" id="post-name" placeholder="name" class="input-name" />
-
+      <input
+        type="text"
+        id="post-name"
+        placeholder="name"
+        class="input-name"
+        required="required"
+      />
       <input
         type="text"
         id="post-body"
         placeholder="Write text here"
         class="input-body"
+        required="required"
       />
-
-      <button type="submit" class="btn-submit">submit</button>
+      <button type="submit" class="btn-submit">Submit</button>
     </form>
 
     <div class="posts"></div>
 
     <div class="refresh">
-      <button class="refresh-btn">refresh</button>
+      <button class="refresh-btn">Refresh</button>
+    </div>
+
+    <!-- Sekcja do wprowadzenia kodu administratora -->
+    <div class="admin-auth">
+      <input type="text" id="admin-code" placeholder="Enter admin code" />
+      <button id="admin-submit">Submit</button>
     </div>
 
     <script src="index.js"></script>
