@@ -81,6 +81,7 @@ adminSubmitBtn.addEventListener("click", () => {
     localStorage.setItem("isAdmin", "true");
     alert("You are now an admin!");
     checkAdminStatus();
+    adminCodeInput.clear();
   } else {
     alert("Incorrect code.");
   }
@@ -109,4 +110,5 @@ displayPosts();
 if (localStorage.getItem("isAdmin") === "true") {
   checkAdminStatus();
   alert("You are an admin!");
+  adminCodeInput.clear();
 }
