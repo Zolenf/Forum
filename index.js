@@ -13,7 +13,7 @@ const adminCodeInput = doc.getElementById("admin-code");
 async function displayPosts() {
   postsContainer.innerHTML = "";
 
-  const response = await fetch("http://127.0.0.1:8888/posts");
+  const response = await fetch("https://forum-backend-lac.vercel.app/posts");
   const posts = await response.json();
 
   posts.forEach((post) => {
@@ -58,7 +58,7 @@ function checkAdminStatus() {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  await fetch("http://127.0.0.1:8888/posts", {
+  await fetch("https://forum-backend-lac.vercel.app/posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -99,7 +99,7 @@ postsContainer.addEventListener("click", async (e) => {
     const postElement = e.target.closest(".post");
     const postId = postElement.id;
 
-    await fetch(`http://127.0.0.1:8888/posts/${postId}`, {
+    await fetch(`https://forum-backend-lac.vercel.app/posts/${postId}`, {
       method: "DELETE",
     });
 
