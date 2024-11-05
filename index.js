@@ -91,6 +91,7 @@ adminSubmitBtn.addEventListener("click", () => {
 adminlogoutBtn.addEventListener("click", () => {
   if (localStorage.getItem("isAdmin") === "true") {
     localStorage.removeItem("isAdmin");
+    alert("You are no longer an admin.");
     checkAdminStatus();
   }
 });
