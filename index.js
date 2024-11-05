@@ -8,6 +8,7 @@ const refreshBtn = doc.querySelector(".refresh-btn");
 const adminCode = "2115"; // Ustaw swój sekret
 const adminSubmitBtn = doc.getElementById("admin-submit");
 const adminCodeInput = doc.getElementById("admin-code");
+const adminlogoutBtn = doc.getElementById("admin-logout");
 
 // Funkcja do wyświetlania wiadomości
 async function displayPosts() {
@@ -34,6 +35,7 @@ async function displayPosts() {
   });
 
   // Sprawdza status admina i ustawia widoczność ikon kosza
+  checkAdminStatus();
 }
 
 // Funkcja do sprawdzenia statusu administratora
@@ -81,9 +83,15 @@ adminSubmitBtn.addEventListener("click", () => {
     localStorage.setItem("isAdmin", "true");
     alert("You are now an admin!");
     checkAdminStatus();
-    adminCodeInput.clear();
   } else {
     alert("Incorrect code.");
+  }
+});
+
+adminlogoutBtn.addEventListener("click", () => {
+  if (localStorage.getItem("isAdmin") === "true") {
+    localStorage.removeItem("isAdmin");
+    checkAdminStatus();
   }
 });
 
@@ -106,9 +114,3 @@ postsContainer.addEventListener("click", async (e) => {
 
 // Wywołujemy funkcję, aby załadować wiadomości przy starcie
 displayPosts();
-
-if (localStorage.getItem("isAdmin") === "true") {
-  checkAdminStatus();
-  alert("You are an admin!");
-  adminCodeInput.clear();
-}
